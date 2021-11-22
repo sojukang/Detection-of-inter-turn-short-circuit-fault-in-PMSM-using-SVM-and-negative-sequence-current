@@ -10,9 +10,9 @@ class Preprocessing():
 
     def fundamental_total_sample_period(self, time_sample):
         '''
-        time_sample: a sampling timem. return the fundamental number of samples in total sample period
+        time_sample: a sampling time(ms). return the fundamental number of samples in total sample period
         '''
-        self.time_sample = time_sample
+        self.time_sample = time_sample / 1000
         self.freq_sample = 1 / self.time_sample 
 
         return self.period / time_sample
