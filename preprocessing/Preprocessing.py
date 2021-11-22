@@ -14,8 +14,8 @@ class Preprocessing():
         '''
         self.time_sample = time_sample / 1000
         self.freq_sample = 1 / self.time_sample 
-
-        return self.period / time_sample
+        
+        return int(self.period / self.time_sample)
 
     def dft(self):
         pass 
