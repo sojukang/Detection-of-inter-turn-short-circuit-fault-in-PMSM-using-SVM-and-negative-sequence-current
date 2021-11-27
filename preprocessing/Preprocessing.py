@@ -1,12 +1,17 @@
 import pandas as pd 
 import numpy as np 
 
+NS_7200RPM = 83
+np.random.seed()
+STEADY_TIME_INDEX = 682
+
 class Preprocessing():
-    def __init__(self, dataset: pd.DataFrame, rpm):
+
+    def __init__(self, dataset: pd.DataFrame, rpm=7200):
         self.rpm = rpm
         self.freq_source = rpm / 30
         self.period = 1 / self.freq_source 
-        self.dataset = dataset
+        self.dataset = dataset.iloc[STEADY_TIME_INDEX: ]
 
     def fundamental_total_sample_period(self, time_sample):
         '''
@@ -15,14 +20,20 @@ class Preprocessing():
         self.time_sample = time_sample / 1000
         self.freq_sample = 1 / self.time_sample 
         self.Ns = int(self.period / self.time_sample)
+
         return self.Ns
 
-    def dft(self, label: str):
-        len_data = len(self.dataset)
-        y_sample = self.dataset[len_data // 2: len_data // 2 + self.Ns]
-        self.freq_source
+    def truncate_to_Ns_fundamental(self, start, end):
+        data = self.dataset[start: end]
+        Ns_trunc = self.Ns - NS_7200RPM
+        trunc_idx_arr = np.random.choice(self.Ns, Ns_trunc, replace=False) + start
+        data.drop(index=trunc_idx_arr, inplace=True)
 
-        N = self.Ns 
+        return data
+
+    def dft(self, label: str, data):
+        N = len(data)
+        y_sample = data
         df = int(self.freq_source)
         x = np.linspace(0.0, N * df, N)
         y = y_sample[label]
@@ -52,3 +63,5 @@ class Preprocessing():
         self.dataset.drop(['Max(A)', 'Max(B)', 'Max(C)'], axis=1, inplace=True)
 
         return self.dataset
+
+
