@@ -1,6 +1,7 @@
-# A-Transformer-based-Inter-turn-short-circuit-fault-diagnosis-method-for-Permanent-Magnet-Synchronous Machines
+# Detection of inter-turn short circuit fault in PMSM using SVM and negative sequence current
 
-A binary classification of inter-turn short fault in PMSMs using Transformer based DL model.
+
+A binary classification of inter-turn short fault in PMSMs using SVM model.
 
 PMSMs(Permanent magnet synchronous machines) are widely used nowdays especially EVs(Electric Vehecles). because its superier capabilities of High Torque, rotational speed, efficiency. 
 
