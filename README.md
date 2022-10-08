@@ -8,3 +8,6 @@ PMSMs(Permanent magnet synchronous machines) are widely used nowdays especially 
 but in these harshy conditions, PMSMs are easily become fault conditions. Winding faults most commonly occured in PMSMs. Winding fualts consist of 3 mechanisms: inter-turn short circuits, phase-to-phase short circuits, phase-to-ground shorts. 
 
 Detection of inter-turn short circuits are very important because those faults easily evolve to other short circuit faults. 
+
+# Paper
+[Detection-of-inter-turn-short-circuit-fault-in-PMSM-using-SVM-and-negative-sequence-current](https://github.com/sojukang/Detection-of-inter-turn-short-circuit-fault-in-PMSM-using-SVM-and-negative-sequence-current/blob/main/Detection%20of%20inter-turn%20short%20circuit%20fault%20in%20PMSM%20using%20SVM%20and%20negative.pdf)
